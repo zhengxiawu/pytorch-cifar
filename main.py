@@ -162,6 +162,6 @@ def test(epoch):
 
 
 for epoch in range(0, args.epoch):
-    lr_scheduler.step()
     train(epoch)
+    lr_scheduler.step()
     test(epoch)
