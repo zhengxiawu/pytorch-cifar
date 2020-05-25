@@ -28,7 +28,7 @@ parser.add_argument('--data_path', default='/gdata/cifar10',
 args = parser.parse_args()
 
 save_path = "./experiment/{}".format(args.model_name)
-if os.path.isdir(save_checkpoint):
+if os.path.isdir(save_path):
     pass
 else:
     os.mkdir(save_path)
