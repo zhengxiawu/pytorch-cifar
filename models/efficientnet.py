@@ -144,9 +144,9 @@ class EfficientNet(nn.Module):
         out = self.layers(out)
         out = F.adaptive_avg_pool2d(out, 1)
         out = out.view(out.size(0), -1)
-        dropout_rate = self.cfg['dropout_rate']
-        if self.training and dropout_rate > 0:
-            out = F.dropout(out, p=dropout_rate)
+        # dropout_rate = self.cfg['dropout_rate']
+        # if self.training and dropout_rate > 0:
+        #     out = F.dropout(out, p=dropout_rate)
         out = self.linear(out)
         return out
 
@@ -157,9 +157,9 @@ def EfficientNetB0():
         'expansion': [1, 6, 6, 6, 6, 6, 6],
         'out_channels': [16, 24, 40, 80, 112, 192, 320],
         'kernel_size': [3, 3, 5, 3, 5, 5, 3],
-        'stride': [1, 2, 2, 2, 1, 2, 1],
-        'dropout_rate': 0.2,
-        'drop_connect_rate': 0.2,
+        'stride': [1, 1, 2, 2, 1, 2, 1],
+        'dropout_rate': 0.0,
+        'drop_connect_rate': 0.0,
     }
     return EfficientNet(cfg)
 
