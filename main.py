@@ -149,12 +149,12 @@ def test(epoch):
                         top1=top1, top5=top5))
     # Save checkpoint.
     if best_acc < top1:
-            best_top1 = top1
-            is_best = True
-            logger.info("Current best Prec@1 = {:.4%}".format(best_top1))
+        best_acc = top1
+        is_best = True
+        logger.info("Current best Prec@1 = {:.4%}".format(best_acc))
     else:
         is_best = False
-    save_checkpoint(model, save_path, is_best)
+    save_checkpoint(net, save_path, is_best)
 
 
 for epoch in range(0, args.epoch):

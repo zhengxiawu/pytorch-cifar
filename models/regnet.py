@@ -151,5 +151,5 @@ def test():
     print(y.shape)
 
 
-if __name__ == '__main__':
-    test()
+# if __name__ == '__main__':
+#     test()
