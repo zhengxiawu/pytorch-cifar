@@ -28,6 +28,10 @@ parser.add_argument('--data_path', default='/gdata/cifar10',
 args = parser.parse_args()
 
 save_path = "./experiment/{}".format(args.model_name)
+if os.path.isdir(save_checkpoint):
+    pass
+else:
+    os.mkdir(save_path)
 logger = get_logger(os.path.join(save_path, "logger.log"))
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 best_acc = 0  # best test accuracy
