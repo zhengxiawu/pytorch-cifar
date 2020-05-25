@@ -3,28 +3,33 @@
     - msr_init: net parameter initialization.
     - progress_bar: progress bar mimic xlua.progress.
 '''
+import logging
+import math
 import os
+import shutil
 import sys
 import time
-import math
 
+import torch
 import torch.nn as nn
 import torch.nn.init as init
 
 
 def get_mean_and_std(dataset):
     '''Compute the mean and std value of dataset.'''
-    dataloader = torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=True, num_workers=2)
+    dataloader = torch.utils.data.DataLoader(
+        dataset, batch_size=1, shuffle=True, num_workers=2)
     mean = torch.zeros(3)
     std = torch.zeros(3)
     print('==> Computing mean and std..')
     for inputs, targets in dataloader:
         for i in range(3):
-            mean[i] += inputs[:,i,:,:].mean()
-            std[i] += inputs[:,i,:,:].std()
+            mean[i] += inputs[:, i, :, :].mean()
+            std[i] += inputs[:, i, :, :].std()
     mean.div_(len(dataset))
     std.div_(len(dataset))
     return mean, std
+
 
 def init_params(net):
     '''Init layer parameters.'''
@@ -48,6 +53,8 @@ term_width = int(term_width)
 TOTAL_BAR_LENGTH = 65.
 last_time = time.time()
 begin_time = last_time
+
+
 def progress_bar(current, total, msg=None):
     global last_time, begin_time
     if current == 0:
@@ -91,6 +98,7 @@ def progress_bar(current, total, msg=None):
         sys.stdout.write('\n')
     sys.stdout.flush()
 
+
 def format_time(seconds):
     days = int(seconds / 3600/24)
     seconds = seconds - days*3600*24
@@ -122,3 +130,70 @@ def format_time(seconds):
     if f == '':
         f = '0ms'
     return f
+
+
+def get_logger(file_path):
+    """ Make python logger """
+    # [!] Since tensorboardX use default logger (e.g. logging.info()), we should use custom logger
+    logger = logging.getLogger('cifar10-training')
+    log_format = '%(asctime)s | %(message)s'
+    formatter = logging.Formatter(log_format, datefmt='%m/%d %I:%M:%S %p')
+    file_handler = logging.FileHandler(file_path)
+    file_handler.setFormatter(formatter)
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(formatter)
+
+    logger.addHandler(file_handler)
+    logger.addHandler(stream_handler)
+    logger.setLevel(logging.INFO)
+
+    return logger
+
+
+class AverageMeter(object):
+    """
+    Computes and stores the average and current value
+    Copied from: https://github.com/pytorch/examples/blob/master/imagenet/main.py
+    """
+
+    def __init__(self):
+        self.val = 0
+        self.avg = 0
+        self.sum = 0
+        self.count = 0
+
+    def reset(self):
+        self.val = 0
+        self.avg = 0
+        self.sum = 0
+        self.count = 0
+
+    def update(self, val, n=1):
+        self.val = val
+        self.sum += val * n
+        self.count += n
+        self.avg = self.sum / self.count
+
+
+def accuracy(output, target, topk=(1,)):
+    """ Computes the precision@k for the specified values of k """
+    maxk = max(topk)
+    batch_size = target.size(0)
+
+    _, pred = output.topk(maxk, 1, True, True)
+    pred = pred.t()
+    correct = pred.eq(target.view(1, -1).expand_as(pred))
+
+    res = []
+    for k in topk:
+        correct_k = correct[:k].view(-1).float().sum(0, keepdim=True)
+        res.append(correct_k.mul_(1.0 / batch_size))
+    return res
+
+
+def save_checkpoint(state, ckpt_dir, is_best=False):
+    filename = os.path.join(ckpt_dir, 'checkpoint.pth.tar')
+    torch.save(state, filename)
+    if is_best:
+        best_filename = os.path.join(ckpt_dir, 'best.pth.tar')
+        shutil.copyfile(filename, best_filename)
