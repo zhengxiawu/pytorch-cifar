@@ -152,8 +152,8 @@ def test(epoch):
             best_top1 = top1
             is_best = True
             logger.info("Current best Prec@1 = {:.4%}".format(best_top1))
-        else:
-            is_best = False
+    else:
+        is_best = False
     save_checkpoint(model, save_path, is_best)
 
 
