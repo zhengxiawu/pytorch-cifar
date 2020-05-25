@@ -14,7 +14,7 @@ from .mobilenet import *
 from .mobilenetv2 import *
 from .efficientnet import *
 from .regnet import *
-from nas_models import *
+from .nas_models import *
 
 model_dict = {'resnet18': ResNet18(),
               'resnet34': ResNet34(),
