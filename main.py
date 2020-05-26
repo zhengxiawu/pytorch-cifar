@@ -126,7 +126,7 @@ def train(epoch):
             logger.info(
                 "Train: [{:3d}/{}] Step {:03d}/{:03d} Loss {losses.avg:.3f} "
                 "Prec@(1,5) ({top1.avg:.1%}, {top5.avg:.1%})".format(
-                    epoch+1, args.epochs, batch_idx, len(trainloader), losses=losses,
+                    epoch+1, args.epoch, batch_idx, len(trainloader), losses=losses,
                     top1=top1, top5=top5))
 
 
@@ -150,7 +150,7 @@ def test(epoch):
                 logger.info(
                     "Valid: [{:3d}/{}] Step {:03d}/{:03d} Loss {losses.avg:.3f} "
                     "Prec@(1,5) ({top1.avg:.1%}, {top5.avg:.1%})".format(
-                        epoch+1, args.epochs, batch_idx, len(testloader)-1, losses=losses,
+                        epoch+1, args.epoch, batch_idx, len(testloader)-1, losses=losses,
                         top1=top1, top5=top5))
     # Save checkpoint.
     if best_acc < top1:
