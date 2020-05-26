@@ -153,8 +153,8 @@ def test(epoch):
                         epoch+1, args.epoch, batch_idx, len(testloader)-1, losses=losses,
                         top1=top1, top5=top5))
     # Save checkpoint.
-    if best_acc < top1:
-        best_acc = top1
+    if best_acc < top1.avg:
+        best_acc = top1.avg
         is_best = True
         logger.info("Current best Prec@1 = {:.4%}".format(best_acc))
     else:
