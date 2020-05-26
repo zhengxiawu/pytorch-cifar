@@ -77,8 +77,9 @@ torch.backends.cudnn.enabled = True
 logger.info('==> Building model..')
 net = get_model(args.model_name)
 macs, params = profile(net, inputs=(torch.randn(1, 3, 32, 32), ))
-logger.info("The parameter size is: {}".format(params/1, 000, 000.))
-logger.info("The FLOPS is: {}".format(macs/1, 000, 000.))
+macs, params = macs / 1000. / 1000., params / 1000. / 1000.
+logger.info("The parameter size is: {0}".format((params)))
+logger.info("The FLOPS is: {0}".format(macs))
 net = net.to(device)
 if device == 'cuda':
     net = torch.nn.DataParallel(net)
