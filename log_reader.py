@@ -54,5 +54,8 @@ if __name__ == "__main__":
                         print(line)
                     if 'Current best' in line:
                         _temp.append(line)
-                print(_temp[-1])
+                if len(_temp) > 0:
+                    print(_temp[-1])
+                else:
+                    print(_temp)
 
