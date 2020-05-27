@@ -1,16 +1,16 @@
 # Train CIFAR10 with PyTorch
 
-I'm playing with [PyTorch](http://pytorch.org/) on the CIFAR10 dataset.
+Training different architectures with [PyTorch](http://pytorch.org/) on the CIFAR10 dataset without any tricks i.e., auto-augmentation, cutout, droppath, dropout.
 
 ## Prerequisites
 - Python 3.6+
-- PyTorch 1.0+
+- PyTorch 1.5+
 
 ## Accuracy
-| Model             | Acc.        |
+| Model             | Acc.        | FLOPS        | param        | training time|
 | ----------------- | ----------- |
-| [VGG16](https://arxiv.org/abs/1409.1556)              | 92.64%      |
-| [ResNet18](https://arxiv.org/abs/1512.03385)          | 93.02%      |
+| [VGG16](https://arxiv.org/abs/1409.1556)              |       |
+| [ResNet18](https://arxiv.org/abs/1512.03385)          | 95.59%      |
 | [ResNet50](https://arxiv.org/abs/1512.03385)          | 93.62%      |
 | [ResNet101](https://arxiv.org/abs/1512.03385)         | 93.75%      |
 | [RegNetX_200MF](https://arxiv.org/abs/2003.13678)     | 94.24%      |
@@ -23,9 +23,6 @@ I'm playing with [PyTorch](http://pytorch.org/) on the CIFAR10 dataset.
 | [DPN92](https://arxiv.org/abs/1707.01629)             | 95.16%      |
 
 ## Learning rate adjustment
-I manually change the `lr` during training:
-- `0.1` for epoch `[0,150)`
-- `0.01` for epoch `[150,250)`
-- `0.001` for epoch `[250,350)`
+The learning rate is adjusted by the consine learning schedular.
 
-Resume the training with `python main.py --resume --lr=0.01`
+Resume the training with `python main.py --resume --lr=0.1`
