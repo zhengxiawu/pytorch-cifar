@@ -42,6 +42,7 @@ if __name__ == "__main__":
     model_list = os.listdir(experiment_path)
     for model in model_list:
         if not model[0] == '.':
+            print(model)
             model_log_path = os.path.join(experiment_path, model, 'logger.log')
             if os.path.isfile(model_log_path):
                 with open(model_log_path) as f:
