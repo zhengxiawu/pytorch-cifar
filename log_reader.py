@@ -46,5 +46,13 @@ if __name__ == "__main__":
             if os.path.isfile(model_log_path):
                 with open(model_log_path) as f:
                     log_lines = f.readlines()
-                print(log_lines)
+                _temp = []
+                for line in log_lines:
+                    if 'parameter size' in line:
+                        print(line)
+                    if 'FLOPS' in line:
+                        print(line)
+                    if 'Current best' in line:
+                        _temp.append(line)
+                print(_temp)
 
