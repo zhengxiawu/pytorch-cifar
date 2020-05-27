@@ -36,5 +36,15 @@ def read_result(walk_dir):
                 print(this_train_folder)
                 print(log_lines[-1])
 
+
 if __name__ == "__main__":
-    read_result('./experiment')
+    experiment_path = os.path.abspath('./experiment')
+    model_list = os.listdir(experiment_path)
+    for model in model_list:
+        if not model[0] == '.':
+            model_log_path = os.path.join(experiment_path, model, 'logger.log')
+            if os.path.isfile(model_log_path):
+                with open(model_log_path) as f:
+                    log_lines = f.readlines
+                print(log_lines)
+
