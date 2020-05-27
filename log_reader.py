@@ -45,6 +45,6 @@ if __name__ == "__main__":
             model_log_path = os.path.join(experiment_path, model, 'logger.log')
             if os.path.isfile(model_log_path):
                 with open(model_log_path) as f:
-                    log_lines = f.readlines
+                    log_lines = f.readlines()
                 print(log_lines)
 
