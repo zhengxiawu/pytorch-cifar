@@ -18,10 +18,10 @@ Training different architectures with [PyTorch](http://pytorch.org/) on the CIFA
 | [ResNet50](https://arxiv.org/abs/1512.03385)          | 95.74%      | 1304M|23.52M | 4.36 |
 | [ResNet101](https://arxiv.org/abs/1512.03385)         | 95.43%      | 2520M|42.51M | 7.07 |
 | [ResNet152](https://arxiv.org/abs/1512.03385)         | 95.91%      | 3736M|58.15M | 9.99 |
-| [RegNetX_200MF](https://arxiv.org/abs/2003.13678)     | 94.24%      |
-| [RegNetY_400MF](https://arxiv.org/abs/2003.13678)     | 94.29%      |
-| [ResNeXt29(32x4d)](https://arxiv.org/abs/1611.05431)  | 94.73%      |
-| [ResNeXt29(2x64d)](https://arxiv.org/abs/1611.05431)  | 94.82%      |
+| [RegNetX_200MF](https://arxiv.org/abs/2003.13678)     |       |
+| [RegNetY_400MF](https://arxiv.org/abs/2003.13678)     |      |
+| [ResNeXt29(32x4d)](https://arxiv.org/abs/1611.05431)  |    |
+| [ResNeXt29(2x64d)](https://arxiv.org/abs/1611.05431)  |      |
 | [DenseNet121_Cifar](https://arxiv.org/abs/1608.06993) | 95.28%      | 128M | 1.0M | 2.46 |
 | [DPN26](https://arxiv.org/abs/1707.01629)             | 95.64%      | 670M | 11.5M| 5.69 |
 | [DPN92](https://arxiv.org/abs/1707.01629)             | 95.66%      |2053M | 34.2M|15.43 |
