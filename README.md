@@ -10,7 +10,7 @@ Training different architectures with [PyTorch](http://pytorch.org/) on the CIFA
 | Model             | Acc.        | FLOPS        | param        | training time (hours)|
 | ----------------- | ----------- | -----------  | -----------  | -----------          |
 | [Lenet](http://vision.stanford.edu/cs598_spring07/papers/Lecun98.pdf)|   77.56%    |0.65M | 0.06M | 0.63 |
-| [googlenet](https://arxiv.org/pdf/1409.4842.pdf)      |   96.26%    |1529M | 6.16M | 6.16 |
+| [googlenet](https://arxiv.org/pdf/1409.4842.pdf)      |   95.26%    |1529M | 6.16M | 6.16 |
 | [Mobilenet](https://arxiv.org/pdf/1704.04861.pdf)     |   92.18%    |47M   | 3.21M | 0.85 |
 | [MobilenetV2](https://arxiv.org/pdf/1801.04381.pdf)   |   93.81%    | 94M  | 2.296M| 1.95 |
 | [ResNet18](https://arxiv.org/abs/1512.03385)          | 95.59%      | 556M |11.173M| 1.61 |
@@ -30,4 +30,4 @@ Training different architectures with [PyTorch](http://pytorch.org/) on the CIFA
 ## Learning rate adjustment
 The learning rate is adjusted by the consine learning schedular.
 
-Resume the training with `python main.py --resume --lr=0.1`
+Resume the training with `python main.py --lr=0.1 --model_name resnet18`
