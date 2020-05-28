@@ -7,9 +7,9 @@ Training different architectures with [PyTorch](http://pytorch.org/) on the CIFA
 - PyTorch 1.5+
 
 ## Accuracy
-| Model             | Acc.        | FLOPS        | param        | training time|
+| Model             | Acc.        | FLOPS        | param        | training time (hours)|
 | ----------------- | ----------- |
-| [VGG16](https://arxiv.org/abs/1409.1556)              |       |
+| [googlenet](https://arxiv.org/pdf/1409.4842.pdf)              |   96.26%    |  1529M | 6.16M| 6.16 |
 | [ResNet18](https://arxiv.org/abs/1512.03385)          | 95.59%      |
 | [ResNet50](https://arxiv.org/abs/1512.03385)          | 93.62%      |
 | [ResNet101](https://arxiv.org/abs/1512.03385)         | 93.75%      |

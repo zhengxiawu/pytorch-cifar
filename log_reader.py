@@ -8,6 +8,7 @@ from datetime import datetime
 if __name__ == "__main__":
     experiment_path = os.path.abspath('./experiment')
     model_list = os.listdir(experiment_path)
+    model_list.sort()
     for model in model_list:
         if not model[0] == '.':
             print(model)
@@ -17,7 +18,7 @@ if __name__ == "__main__":
                     log_lines = f.readlines()
                 start_time = datetime.strptime(log_lines[0][0:17], '%m/%d %I:%M:%S %p')
                 end_time = datetime.strptime(log_lines[-1][0:17], '%m/%d %I:%M:%S %p')
-                training_hours = (start_time - end_time).total_seconds() / 3600.
+                training_hours = (end_time - start_time).total_seconds() / 3600.
                 print("Training times is {0}".format(training_hours))
                 _temp = []
                 for line in log_lines:
