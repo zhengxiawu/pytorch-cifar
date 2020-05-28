@@ -78,7 +78,7 @@ class Block(nn.Module):
 
 
 class MobileNetV3_Large(nn.Module):
-    def __init__(self, num_classes=1000):
+    def __init__(self, num_classes=10):
         super(MobileNetV3_Large, self).__init__()
         self.conv1 = nn.Conv2d(3, 16, kernel_size=3,
                                stride=2, padding=1, bias=False)
@@ -131,7 +131,7 @@ class MobileNetV3_Large(nn.Module):
         out = self.hs1(self.bn1(self.conv1(x)))
         out = self.bneck(out)
         out = self.hs2(self.bn2(self.conv2(out)))
-        out = F.avg_pool2d(out, 7)
+        out = F.avg_pool2d(out, 4)  # change to 4 for CIFAR10
         out = out.view(out.size(0), -1)
         out = self.hs3(self.bn3(self.linear3(out)))
         out = self.linear4(out)
@@ -139,7 +139,7 @@ class MobileNetV3_Large(nn.Module):
 
 
 class MobileNetV3_Small(nn.Module):
-    def __init__(self, num_classes=1000):
+    def __init__(self, num_classes=10):
         super(MobileNetV3_Small, self).__init__()
         self.conv1 = nn.Conv2d(3, 16, kernel_size=3,
                                stride=2, padding=1, bias=False)
@@ -188,7 +188,7 @@ class MobileNetV3_Small(nn.Module):
         out = self.hs1(self.bn1(self.conv1(x)))
         out = self.bneck(out)
         out = self.hs2(self.bn2(self.conv2(out)))
-        out = F.avg_pool2d(out, 7)
+        out = F.avg_pool2d(out, 4)  # change to 4 for CIFAR10
         out = out.view(out.size(0), -1)
         out = self.hs3(self.bn3(self.linear3(out)))
         out = self.linear4(out)
@@ -197,7 +197,7 @@ class MobileNetV3_Small(nn.Module):
 
 def test():
     net = MobileNetV3_Small()
-    x = torch.randn(2, 3, 224, 224)
+    x = torch.randn(2, 3, 32, 32)
     y = net(x)
     print(y.size())
 
