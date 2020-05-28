@@ -13,11 +13,15 @@ Training different architectures with [PyTorch](http://pytorch.org/) on the CIFA
 | [googlenet](https://arxiv.org/pdf/1409.4842.pdf)      |   95.26%    |1529M | 6.16M | 6.16 |
 | [Mobilenet](https://arxiv.org/pdf/1704.04861.pdf)     |   92.18%    |47M   | 3.21M | 0.85 |
 | [MobilenetV2](https://arxiv.org/pdf/1801.04381.pdf)   |   93.81%    | 94M  | 2.296M| 1.95 |
+|[MobilenetV3Large](https://arxiv.org/pdf/1905.02244.pdf)|   92.89%   | 79.4M| 2.688M| 1.76 |
+|[MobilenetV3Small](https://arxiv.org/pdf/1905.02244.pdf)|   91.37%   | 18.5M| 1.241M| 1.08 |
 | [ResNet18](https://arxiv.org/abs/1512.03385)          | 95.59%      | 556M |11.173M| 1.61 |
 | [ResNet34](https://arxiv.org/abs/1512.03385)          | 95.32%      | 1161M|21.282M| 1.99 |
 | [ResNet50](https://arxiv.org/abs/1512.03385)          | 95.74%      | 1304M|23.52M | 4.36 |
 | [ResNet101](https://arxiv.org/abs/1512.03385)         | 95.43%      | 2520M|42.51M | 7.07 |
 | [ResNet152](https://arxiv.org/abs/1512.03385)         | 95.91%      | 3736M|58.15M | 9.99 |
+| [PreACtResNet18](https://arxiv.org/pdf/1603.05027.pdf)| 95.37%      | 556M |11.17M | 1.22 |
+| [PreACtResNet34](https://arxiv.org/pdf/1603.05027.pdf)| 95.12%      | 1161M|21.27M | 1.96 |
 | [RegNetX_200MF](https://arxiv.org/abs/2003.13678)     |       |
 | [RegNetY_400MF](https://arxiv.org/abs/2003.13678)     |      |
 | [ResNeXt29(32x4d)](https://arxiv.org/abs/1611.05431)  |    |
@@ -26,6 +30,7 @@ Training different architectures with [PyTorch](http://pytorch.org/) on the CIFA
 | [DPN26](https://arxiv.org/abs/1707.01629)             | 95.64%      | 670M | 11.5M| 5.69 |
 | [DPN92](https://arxiv.org/abs/1707.01629)             | 95.66%      |2053M | 34.2M|15.43 |
 | [EfficientB0](https://arxiv.org/pdf/1905.11946.pdf)   | 93.24%      | 112M | 3.69M| 2.92 |
+| [NASNet](https://arxiv.org/pdf/1905.11946.pdf)        | 95.18%      | 615M | 3.83M| 14.7 |
 
 ## Learning rate adjustment
 The learning rate is adjusted by the consine learning schedular.
