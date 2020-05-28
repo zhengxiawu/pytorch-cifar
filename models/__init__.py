@@ -15,6 +15,7 @@ from .mobilenetv2 import *
 from .efficientnet import *
 from .regnet import *
 from .nas_models import *
+from .mobilenetv3 import MobileNetV3_Large, MobileNetV3_Small
 
 model_dict = {'resnet18': ResNet18(),
               'resnet34': ResNet34(),
@@ -29,6 +30,8 @@ model_dict = {'resnet18': ResNet18(),
               'lenet': LeNet(),
               'mobilenet': MobileNet(),
               'mobilenetv2': MobileNetV2(),
+              'mobilenetv3large': MobileNetV3_Large(),
+              'mobilenetv3small': MobileNetV3_Small(),
               'nasnet': NASNet(),
               'amoebanet': AmoebaNet(),
               'darts_v1': DARTS_V1(),
@@ -55,6 +58,7 @@ model_dict = {'resnet18': ResNet18(),
               'vgg13': VGG('VGG13'),
               'vgg16': VGG('VGG16'),
               'vgg19': VGG('VGG19'),
+
               }
 
 
