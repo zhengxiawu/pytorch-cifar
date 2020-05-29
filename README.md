@@ -24,7 +24,7 @@ Training different architectures with [PyTorch](http://pytorch.org/) on the CIFA
 | [PreACtResNet34](https://arxiv.org/pdf/1603.05027.pdf)| 95.12%      | 1161M|21.27M | 1.96 |
 | [PreACtResNet50](https://arxiv.org/pdf/1603.05027.pdf)| 95.95%      | 1303M|23.50M | 4.28 |
 |[PreACtResNet101](https://arxiv.org/pdf/1603.05027.pdf)| 95.44%      | 2519M|42.50M | 6.98 |
-|[PreACtResNet152](https://arxiv.org/pdf/1603.05027.pdf)| -           | 3735M|58.14M | ---- |
+|[PreACtResNet152](https://arxiv.org/pdf/1603.05027.pdf)| 95.76%      | 3735M|58.14M | 9.92 |
 | [RegNetX_200MF](https://arxiv.org/abs/2003.13678)     |       |
 | [RegNetY_400MF](https://arxiv.org/abs/2003.13678)     |      |
 | [ResNeXt29(32x4d)](https://arxiv.org/abs/1611.05431)  |    |
