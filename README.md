@@ -35,8 +35,8 @@ Training different architectures ([PyTorch](http://pytorch.org/)) on the CIFAR10
 | [EfficientB0](https://arxiv.org/pdf/1905.11946.pdf)   | 93.24%      | 112M | 3.69M | 2.92 |
 | [NASNet](https://arxiv.org/pdf/1905.11946.pdf)        | 95.18%      | 615M | 3.83M | 14.7 |
 | [AmoebaNet](https://arxiv.org/abs/1802.01548)         | 95.38%      | 499M | 3.14M | 11.99|
-| [Darts_V1]](https://arxiv.org/abs/1806.09055)         | 95.05%      | 511M | 3.16M | 11.69|
-| [Darts_V2]](https://arxiv.org/abs/1806.09055)         | -      | 539M | 3.34M | -|
+| [Darts_V1](https://arxiv.org/abs/1806.09055)          | 95.05%      | 511M | 3.16M | 11.69|
+| [Darts_V2](https://arxiv.org/abs/1806.09055)          | -      | 539M | 3.34M | -|
 
 ## Learning rate adjustment
 The learning rate is adjusted by the consine learning schedular.
