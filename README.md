@@ -27,8 +27,9 @@ Training different architectures ([PyTorch](http://pytorch.org/)) on the CIFAR10
 |[PreACtResNet152](https://arxiv.org/pdf/1603.05027.pdf)| 95.76%      | 3735M|58.14M | 9.92 |
 | [RegNetX_200MF](https://arxiv.org/abs/2003.13678)     |       |
 | [RegNetY_400MF](https://arxiv.org/abs/2003.13678)     |      |
-| [ResNeXt29(32x4d)](https://arxiv.org/abs/1611.05431)  |    |
-| [ResNeXt29(2x64d)](https://arxiv.org/abs/1611.05431)  | 95.28%      | 1416M| 9.12M | 4.39 |
+| [ResNeXt29(32x4d)](https://arxiv.org/abs/1611.05431)  | 95.49%      | 779M | 4.77M | 4.18 |
+| [ResNeXt29(2x64d)](https://arxiv.org/abs/1611.05431)  | 95.41%      | 1416M| 9.12M | 4.39 |
+| [ResNeXt29(4x64d)](https://arxiv.org/abs/1611.05431)  | 95.76%      | 4242M| 27.1M | 11.0 |
 | [DenseNet121_Cifar](https://arxiv.org/abs/1608.06993) | 95.28%      | 128M | 1.0M  | 2.46 |
 | [DPN26](https://arxiv.org/abs/1707.01629)             | 95.64%      | 670M | 11.5M | 5.69 |
 | [DPN92](https://arxiv.org/abs/1707.01629)             | 95.66%      |2053M | 34.2M |15.43 |
@@ -36,7 +37,7 @@ Training different architectures ([PyTorch](http://pytorch.org/)) on the CIFAR10
 | [NASNet](https://arxiv.org/pdf/1905.11946.pdf)        | 95.18%      | 615M | 3.83M | 14.7 |
 | [AmoebaNet](https://arxiv.org/abs/1802.01548)         | 95.38%      | 499M | 3.14M | 11.99|
 | [Darts_V1](https://arxiv.org/abs/1806.09055)          | 95.05%      | 511M | 3.16M | 11.69|
-| [Darts_V2](https://arxiv.org/abs/1806.09055)          | -      | 539M | 3.34M | -|
+| [Darts_V2](https://arxiv.org/abs/1806.09055)          | 94.97%      | 539M | 3.34M | 12.32|
 
 ## Learning rate adjustment
 The learning rate is adjusted by the consine learning schedular.
