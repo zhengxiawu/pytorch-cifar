@@ -25,8 +25,10 @@ Training different architectures ([PyTorch](http://pytorch.org/)) on the CIFAR10
 | [PreACtResNet50](https://arxiv.org/pdf/1603.05027.pdf)| 95.95%      | 1303M|23.50M | 4.28 |
 |[PreACtResNet101](https://arxiv.org/pdf/1603.05027.pdf)| 95.44%      | 2519M|42.50M | 6.98 |
 |[PreACtResNet152](https://arxiv.org/pdf/1603.05027.pdf)| 95.76%      | 3735M|58.14M | 9.92 |
-| [RegNetX_200MF](https://arxiv.org/abs/2003.13678)     |       |
-| [RegNetY_400MF](https://arxiv.org/abs/2003.13678)     |      |
+| [SENet18](https://arxiv.org/abs/1709.01507)           | 95.46%      | 556M |11.26M | 1.87 |
+| [RegNetX_200MF](https://arxiv.org/abs/2003.13678)     | 95.19%      | 226M |2.32M  | 2.83 |
+| [RegNetX_400MF](https://arxiv.org/abs/2003.13678)     | 94.12%      | 471M |4.77M  | 4.77 |
+| [RegNetY_400MF](https://arxiv.org/abs/2003.13678)     | 95.51%      | 472M |5.71M  | 4.91 |
 | [ResNeXt29(32x4d)](https://arxiv.org/abs/1611.05431)  | 95.49%      | 779M | 4.77M | 4.18 |
 | [ResNeXt29(2x64d)](https://arxiv.org/abs/1611.05431)  | 95.41%      | 1416M| 9.12M | 4.39 |
 | [ResNeXt29(4x64d)](https://arxiv.org/abs/1611.05431)  | 95.76%      | 4242M| 27.1M | 11.0 |
